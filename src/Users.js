@@ -1,8 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from './base';
 
 function App() {
-
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -21,19 +20,19 @@ function App() {
     }
 
     getUsers();
-  }, [])
+  }, []);
 
-  if (loading) return <div>loading</div>
+  if (loading) return <div>loading</div>;
 
   // if (error) return <div>there was an error ...</div>
 
   return (
-    <div className="App">
+    <div className='App'>
       {users.data.map(user => (
         <div key={user.id}>
           <p>{user.name}</p>
-        <p>{user.id}</p>
-        <p>{user.email}</p>
+          <p>{user.id}</p>
+          <p>{user.email}</p>
         </div>
       ))}
     </div>
